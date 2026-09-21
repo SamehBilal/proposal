@@ -63,6 +63,77 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border:1px sol
 .closing-num{position:absolute;right:6%;bottom:-2%;font-size:clamp(9rem,26vw,24rem);font-weight:900;line-height:.8;letter-spacing:-.05em;color:color-mix(in srgb,var(--accent) 10%,transparent);pointer-events:none;user-select:none}
 @media(max-width:800px){.closing{padding:110px 0 90px}.closing-kicker{top:80px;left:20px}.closing-links a{padding:13px 18px}}
 
+/* ---------- Responsive ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+h1,h2{overflow-wrap:break-word}
+.node b,.node small{display:block}.node small{color:var(--muted);margin-top:4px}
+
+.section>.wrap,.hero-inner{min-width:0}
+@supports(height:100svh){.hero,.section,.footer{min-height:100svh}}
+
+/* tablets & small laptops */
+@media(max-width:1024px){
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:18px}
+  .wrap{padding:0 28px}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:repeat(3,1fr)}
+  .timeline{grid-template-columns:repeat(3,1fr);row-gap:24px}
+  .num{font-size:clamp(4rem,10vw,7rem)}
+}
+
+/* phones */
+@media(max-width:800px){
+  .wrap{padding:0 20px}
+  .g2,.g3,.g4,.timeline,.flow{grid-template-columns:1fr}
+  .nav{top:8px;width:calc(100% - 20px);padding:7px 7px 7px 16px}
+  .logo{font-size:.7rem}
+  h1{font-size:clamp(2.5rem,11.5vw,3.5rem);line-height:.95}
+  h2{font-size:clamp(2rem,9.5vw,2.8rem);line-height:1;margin-bottom:18px}
+  .lead{font-size:1.08rem}
+  .section-head{margin-bottom:26px}
+  .section-head p{font-size:1rem}
+  .section{padding:92px 0 120px}
+  .hero-inner{padding-top:90px;padding-bottom:120px}
+  .grid{gap:12px}
+  .card{padding:20px;min-height:0}
+  .card p{font-size:.95rem}
+  .icon{margin-bottom:14px}
+  .arch{margin:24px 0;gap:8px}
+  .node{padding:18px}
+  .arrow{transform:rotate(90deg);justify-self:center;line-height:1}
+  .flow{gap:8px}
+  .table-scroll table{min-width:0}
+  th,td{padding:10px 6px;font-size:.78rem}
+  th{font-size:.62rem;letter-spacing:.02em}
+  .timeline{row-gap:18px}
+  .quote{font-size:1.15rem;padding:6px 16px}
+  .pricebox{padding:22px;border-radius:22px}
+  .price{font-size:clamp(1.5rem,8vw,3rem)}
+  .developer-title{gap:10px}
+  .pill{font-size:.74rem}
+  .checklist{grid-template-columns:1fr}
+  .footer{padding:100px 0 120px}
+  /* floating buttons become a compact bar, centred at the bottom */
+  .controls{right:auto;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));gap:4px;padding:5px;background:color-mix(in srgb,var(--panel) 90%,transparent);border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(14px)}
+  .controls button{padding:10px 15px;min-height:42px;font-size:.85rem;white-space:nowrap}
+  .nav-actions button{min-width:40px;min-height:36px}
+}
+
+/* large phones in landscape / portrait tablets */
+@media(min-width:561px) and (max-width:800px){
+  .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:repeat(3,1fr)}
+  .timeline{grid-template-columns:repeat(2,1fr)}
+  .checklist{grid-template-columns:repeat(2,1fr)}
+}
+
+/* very small phones */
+@media(max-width:360px){
+  .wrap{padding:0 16px}
+  .card{padding:16px}
+  .controls button{padding:10px 12px}
+}
+
 /* Print / PDF: one 1440x960 page per slide, same look as on screen */
 @page{size:1440px 960px;margin:0}
 @media print{
@@ -124,7 +195,7 @@ body.rtl .ar-only{display:block!important}
 
 <section class="section"><div class="wrap reveal"><div class="section-head"><div class="kicker">05 · Influencer Management</div><div class="num">05</div><h2>Every talent profile, <span class="orange">fully managed.</span></h2></div><div class="grid g3"><div class="card"><h3>Profiles</h3><ul class="list"><li>Full name / display name</li><li>Profile & cover images</li><li>Biography</li><li>Country / location</li></ul></div><div class="card"><h3>Management</h3><ul class="list"><li>Category & status</li><li>Contact information</li><li>Custom fields</li><li>SEO information</li></ul></div><div class="card accent"><h3>Relationships</h3><ul class="list"><li>Social accounts</li><li>Brand relationships</li><li>Campaign history</li><li>Media gallery</li></ul></div></div></div></section>
 
-<section class="section"><div class="wrap reveal"><div class="section-head"><div class="kicker">06 · Social Media Management</div><div class="num">06</div><h2>Keep talent statistics <span class="orange">continuously up to date.</span></h2><p>Each influencer can have multiple connected social platforms. The system will store account information and retrieve supported statistics through available APIs or approved data sources.</p></div><table><thead><tr><th>Platform</th><th>Followers</th><th>Views</th><th>Engagement</th></tr></thead><tbody><tr><td>Instagram</td><td>Automated</td><td>Where available</td><td>Where available</td></tr><tr><td>YouTube</td><td>Automated</td><td>Automated</td><td>Where available</td></tr><tr><td>TikTok</td><td>Automated</td><td>Where available</td><td>Where available</td></tr><tr><td>Other supported platforms</td><td>Automated</td><td>Where available</td><td>Where available</td></tr></tbody></table></div></section>
+<section class="section"><div class="wrap reveal"><div class="section-head"><div class="kicker">06 · Social Media Management</div><div class="num">06</div><h2>Keep talent statistics <span class="orange">continuously up to date.</span></h2><p>Each influencer can have multiple connected social platforms. The system will store account information and retrieve supported statistics through available APIs or approved data sources.</p></div><div class="table-scroll"><table><thead><tr><th>Platform</th><th>Followers</th><th>Views</th><th>Engagement</th></tr></thead><tbody><tr><td>Instagram</td><td>Automated</td><td>Where available</td><td>Where available</td></tr><tr><td>YouTube</td><td>Automated</td><td>Automated</td><td>Where available</td></tr><tr><td>TikTok</td><td>Automated</td><td>Where available</td><td>Where available</td></tr><tr><td>Other supported platforms</td><td>Automated</td><td>Where available</td><td>Where available</td></tr></tbody></table></div></div></section>
 
 <section class="section"><div class="wrap reveal"><div class="section-head"><div class="kicker">07 · Automated Data Synchronization</div><div class="num">07</div><h2>The platform <span class="orange">works in the background.</span></h2></div><div class="flow"><div>Social Platform</div><div>API / Data Source</div><div>Sync Engine</div><div>Validate & Normalize</div><div>Update Statistics</div><div>Dashboard / Website</div></div><div class="grid g3" style="margin-top:22px"><div class="card"><h3>Scheduling</h3><p>Scheduled updates and background queues.</p></div><div class="card"><h3>Reliability</h3><p>Retry handling, rate-limit awareness and error logging.</p></div><div class="card accent"><h3>Visibility</h3><p>Last successful synchronization, status and manual refresh.</p></div></div><p class="small" style="margin-top:22px">Available metrics and automation depend on each platform's API capabilities, account type, permissions and applicable third-party limitations.</p></div></section>
 
